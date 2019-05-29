@@ -1,11 +1,11 @@
 mongodb:
   primary:
     host: localhost
-    port: 27019
+    port: 27017
     database: first
   secondary:
     host: localhost
-    port: 27020
+    port: 27017
     database: second
 
 spring:
