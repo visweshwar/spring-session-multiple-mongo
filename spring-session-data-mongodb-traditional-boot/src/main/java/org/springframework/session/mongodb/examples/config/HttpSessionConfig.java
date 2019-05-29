@@ -18,12 +18,23 @@ package org.springframework.session.mongodb.examples.config;
 import java.time.Duration;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.session.data.mongo.JdkMongoSessionConverter;
 import org.springframework.session.data.mongo.config.annotation.web.http.EnableMongoHttpSession;
 
+import static org.springframework.session.mongodb.examples.config.HttpSessionConfig.MONGO_TEMPLATE;
+
+
 // tag::class[]
 @EnableMongoHttpSession // <1>
+@Configuration
+@EnableMongoRepositories(basePackages = "org.springframework.session.data.mongo",
+		mongoTemplateRef = MONGO_TEMPLATE)
+
 public class HttpSessionConfig {
+
+	protected static final String MONGO_TEMPLATE = "secondaryMongoTemplate";
 
 	@Bean
 	public JdkMongoSessionConverter jdkMongoSessionConverter() {

@@ -15,16 +15,27 @@
  */
 package org.springframework.session.mongodb.examples;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.session.mongodb.examples.repository.primary.PrimaryModel;
+import org.springframework.session.mongodb.examples.repository.primary.PrimaryRepository;
+import org.springframework.session.mongodb.examples.repository.secondary.SecondaryModel;
+import org.springframework.session.mongodb.examples.repository.secondary.SecondaryRepository;
+
+import java.util.List;
 
 /**
  * @author Rob Winch
  */
+@Slf4j
 @SpringBootApplication
 public class SpringSessionMongoTraditionalBoot {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringSessionMongoTraditionalBoot.class, args);
 	}
+
+
 }

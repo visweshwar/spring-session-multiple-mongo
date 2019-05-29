@@ -1,4 +1,0 @@
-logging:
-  level:
-    org.springframework.data.mongodb: DEBUG
-    org.springframework.session: DEBUG
